@@ -51,6 +51,7 @@ const index: React.FC = () => {
     }
     
   };
+  console.log(curTime);
   return (
     <Grid
       container
@@ -75,8 +76,8 @@ const index: React.FC = () => {
             <p
               key={singleTranscript.startTime}
               className={
-                singleTranscript.startTime - 0.15 < curTime &&
-                curTime < singleTranscript.startTime + 0.15
+                singleTranscript.startTime <= curTime &&
+                curTime <= singleTranscript.endTime + .10
                   ? classes.yellowPara
                   : classes.para
               }
